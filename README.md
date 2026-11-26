@@ -53,7 +53,7 @@ RUpload can send create and update requests to Roblox. Check each row, price, de
 
 ## Project context
 
-This is a retrospective automation project from a Roblox development workflow. Roblox Studio’s Asset Manager now supports bulk importing many asset types. RUpload is best read as an example of automating a wider publishing workflow through Open Cloud, including product/pass configuration—not as a replacement for Studio’s importer.
+This is a retrospective automation project from a Roblox development workflow. [Roblox Studio’s Asset Manager now supports bulk importing many asset types](https://create.roblox.com/docs/studio/importer). RUpload is best read as an example of automating a wider publishing workflow through Open Cloud, including product/pass configuration—not as a replacement for Studio’s importer.
 
 ## License
 
