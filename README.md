@@ -53,7 +53,9 @@ RUpload can send create and update requests to Roblox. Check each row, price, de
 
 ## Project context
 
-This is a retrospective automation project from a Roblox development workflow. [Roblox Studio’s Asset Manager now supports bulk importing many asset types](https://create.roblox.com/docs/studio/importer). RUpload is best read as an example of automating a wider publishing workflow through Open Cloud, including product/pass configuration—not as a replacement for Studio’s importer.
+RUpload grew out of a repetitive publishing task in a remote Roblox studio workflow. Today, an AI agent connected to the [Roblox Studio MCP server can use Open Cloud](https://create.roblox.com/docs/studio/mcp-open-cloud) to upload assets and create or edit game passes and developer products. With the required permissions enabled, an agent can coordinate these operations across a batch, including product configuration and icons.
+
+That evolution reduces the need for a separate bulk publishing interface. This public release documents the original automation work: turning repetitive uploads and product configuration into a repeatable workflow, with explicit targets and credential handling.
 
 ## License
 
