@@ -42,7 +42,7 @@ export default async (req: Request, context: Context) => {
   // Always return broad CORS headers, especially for OPTIONS preflight
   const corsHeaders: Record<string, string> = {
     "Vary": "Origin",
-    "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS, DELETE",
+    "Access-Control-Allow-Methods": "GET, POST, PATCH, OPTIONS",
     "Access-Control-Allow-Headers": "x-api-key, content-type, boundary",
     "Cache-Control": "no-store",
   };

@@ -338,31 +338,6 @@ function App() {
     }
   };
 
-  const handleGoToRCount = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (window.location.hostname === 'localhost') {
-      window.location.href = 'http://localhost:3000';
-      return;
-    }
-    if (e.shiftKey) {
-      const customUrl = prompt("Configure RCount URL (leave blank to reset):", localStorage.getItem('rcount_partner_url') || '');
-      if (customUrl === '') {
-        localStorage.removeItem('rcount_partner_url');
-        alert('Reset RCount link to default.');
-      } else if (customUrl) {
-        let formatted = customUrl;
-        if (!formatted.startsWith('http://') && !formatted.startsWith('https://')) {
-          formatted = 'https://' + formatted;
-        }
-        localStorage.setItem('rcount_partner_url', formatted);
-        alert(`Set RCount partner URL to: ${formatted}`);
-      }
-      return;
-    }
-    const partnerUrl = localStorage.getItem('rcount_partner_url') || 'https://rcounticon.netlify.app';
-    window.location.href = partnerUrl;
-  };
-
   return (
     <>
       <div className="mesh-bg" />
@@ -379,10 +354,6 @@ function App() {
         </div>
         
         <div className="flex-row" style={{ gap: '1rem' }}>
-          <a href="/countdown-scheduler" onClick={handleGoToRCount} className="btn btn-secondary flex-row" style={{ gap: '0.4rem', padding: '0.5rem 1rem', fontSize: '0.85rem', textDecoration: 'none', color: 'inherit', width: 'auto' }} title="Go to RCount countdown icon scheduler">
-            <Layers size={14} />
-            <span>Go to RCount</span>
-          </a>
           <button onClick={() => setIsDark(!isDark)} className="btn-icon" title="Toggle Theme">
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -440,7 +411,7 @@ function App() {
                     setActiveUniverseId(null);
                     setApiKey('');
                     for (const key of Object.keys(localStorage)) {
-                      if (key.startsWith('rupload_') || key === 'rcount_partner_url') {
+                      if (key.startsWith('rupload_')) {
                         localStorage.removeItem(key);
                       }
                     }
